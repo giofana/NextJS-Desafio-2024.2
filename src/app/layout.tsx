@@ -1,22 +1,37 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Libre_Baskerville, Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+// Definindo a fonte usando o hook de fonte do Next.js
+const Libre = Libre_Baskerville({
+  weight: ['400', '700'],
+  style: "normal",
+  subsets: ['latin']
+});
+
+// Usando diretamente a classe da fonte
+const fontClasses = Libre.className;
 
 export const metadata: Metadata = {
-  title: "Desafio Next.JS 2024.2",
-  description: "Desafio Next.JS, Typescript, Tailinwd, Prisma, semestre 2024.2 para todos os membros da Code JR",
+  title: "Essence",
+  description: "Um toque de Elegância em um só lugar!",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="pt-br">
+      <head />
+      <body className={fontClasses}>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
