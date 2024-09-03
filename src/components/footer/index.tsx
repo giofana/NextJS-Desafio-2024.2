@@ -4,7 +4,7 @@ import { Facebook, Instagram, Mail, MessageCircle, Youtube } from "lucide-react"
 
 export default function Footer() {
   return (
-    <div className="bg-rosaNav w-full h-3/5 text-left px-4 mt-20 gap-1 flex flex-col py-9 md:py-12 md:px-10 text-acinzentado md:flex-row md:justify-between md:items-center">
+    <div className="bg-rosaNav w-full h-3/5 text-left px-4 pt-5 gap-1 flex flex-col py-9 md:py-12 md:px-10 text-acinzentado md:flex-row md:justify-between md:items-center">
       {/* Redes Sociais */}
       <div className="order-3 md:order-1">
         <span className="font-bold pt-2 md:text-2xl">Redes Sociais:</span>

@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <head />
-      <body className={`${fontClasses} bg-fundo`}>
+      <body className={`${fontClasses} font-libre bg-fundo`}>
         {children}
       </body>
     </html>
