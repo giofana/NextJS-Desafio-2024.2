@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Libre_Baskerville, Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 
 // Definindo a fonte usando o hook de fonte do Next.js
 const Libre = Libre_Baskerville({
@@ -27,10 +25,8 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <head />
-      <body className={fontClasses}>
-        <Navbar />
+      <body className={`${fontClasses} bg-fundo`}>
         {children}
-        <Footer />
       </body>
     </html>
   );

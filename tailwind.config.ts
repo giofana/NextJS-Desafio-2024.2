@@ -28,6 +28,7 @@ const config: Config = {
         'rosaB': '#E8D5CE',
         'rosaMarrom': '#B78E80',
         'rosa': '#E89B93',
+        'fundo': '#F8EEEC',
         
       },
       fontFamily: {

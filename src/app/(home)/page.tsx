@@ -1,3 +1,5 @@
+import CarrosselPost from "@/components/carrosselPost";
+import Categoria from "@/components/categoria/indext";
 import HeroSection from "@/components/heroSection";
 import MVV from "@/components/mvv";
 export default function Home() {
@@ -5,6 +7,8 @@ export default function Home() {
     <div>
       <HeroSection/>
       <MVV/>
+      <Categoria/>
+      <CarrosselPost/>
     </div>
   );
 }
