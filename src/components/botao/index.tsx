@@ -4,8 +4,8 @@ type BotaoProps={
 };
 export default function Botao({titulo, estilo}:BotaoProps){
     return(
-        <div>
+        <div className="flex justify-center items-center">
             <button className={estilo}>{titulo}</button>          
         </div>
     )
-}
+};

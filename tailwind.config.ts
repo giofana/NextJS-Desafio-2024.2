@@ -29,6 +29,7 @@ const config: Config = {
         'rosaMarrom': '#B78E80',
         'rosa': '#E89B93',
         'fundo': '#F8EEEC',
+        'txttab': '#A6786F',
         
       },
       fontFamily: {
