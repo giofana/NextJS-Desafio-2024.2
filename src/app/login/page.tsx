@@ -19,7 +19,7 @@ export default function LoginPage() {
             <input className="bg-rosa rounded-md p-2 text-sm placeholder-acinzentado/70 text-acinzentado" type="password" placeholder="Adicione sua senha"/>
           </div>
           <div className="w-full flex pt-5 justify-center">
-            <Link href={'/'}>
+            <Link href={'/gerenciamento'}>
               <Botao estilo="bg-rosa text-acinzentado rounded-md px-4 py-1.5" titulo="Login"/>
             </Link>
           </div>

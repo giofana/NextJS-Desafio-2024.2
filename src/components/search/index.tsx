@@ -14,10 +14,10 @@ export default function Search({ estilo }: SearchProps) {
                             id="search"
                             name="search"
                             type="text"
-                            className="w-auto text-acinzetado bg-transparent caret-marrom focus:outline-none placeholder:text-marrom"
+                            className="w-auto text-rosinha bg-transparent caret-rosinha focus:outline-none placeholder:text-white"
                             placeholder="O que você procura?"
-                        />
-                        <SearchIcon className="w-7 h-7 text-marrom left-4" />
+                        /> 
+                        <SearchIcon className="w-7 h-7 text-rosinha left-4" />
                     </div>
                 </div>
             </form>

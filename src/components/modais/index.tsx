@@ -1,8 +1,25 @@
-import Botao from "../botao";
+'use client'
+import { useState } from "react";
+import Botao, { BotaoM } from "../botao";
 
-export function Criar(){
+type ModalProps={
+    nome ?: string,
+    descricao ? : string,
+    valor ? : string,
+    isOpen: boolean,
+};
+export function Criar({isOpen}: ModalProps){
+    const [openModal, setOpenModal] = useState(true);
+    const closeModal = () => {
+        setOpenModal(false);
+    };
+    if (!openModal){
+        return null;
+    }
+
     return(
-        <div className="w-2/6 p-5 h-fit flex flex-col bg-rosaB rounded-md">
+        <div className={`w-2/6 p-5 h-fit flex flex-col bg-rosaB rounded-md z-1000 fixed bg-opacity-50 ${isOpen ? 'flex' : 'hidden'}`}>
+            
             <h1 className="text-rosaMarrom pb-3 font-bold text-xl">Criar Produto</h1>
             <div className="px-3 flex flex-col">
                 <span className="text-white py-2">Nome:</span>
@@ -16,8 +33,8 @@ export function Criar(){
             </div>
             
             <div className="pt-9 flex gap-5 justify-end items-end">
-                <Botao estilo="bg-rosaMarrom text-white px-3 py-1 rounded-full" titulo="Criar"/>
-                <Botao estilo="bg-rosaMarrom text-white px-3 py-1 rounded-full " titulo="Cancelar"/>
+            <button className="bg-rosaMarrom text-white px-3 py-1 rounded-full">Criar</button>
+            <button onClick={closeModal} className="bg-rosaMarrom text-white px-3 py-1 rounded-full">Cancelar</button>
             </div>
         </div>
     )
@@ -27,7 +44,7 @@ export function Criar(){
 
 export function Visualizar(){
     return(
-        <div className="w-2/6 p-5 h-fit flex flex-col bg-rosaB rounded-md">
+        <div className="w-2/6 p-5 h-fit flex flex-col bg-rosaB rounded-md z-1000 fixed bg-opacity-50">
             <h1 className="text-rosaMarrom pb-3 font-bold text-xl">Visualizar Produto</h1>
             
             <div className="px-3 flex flex-col">
@@ -51,7 +68,7 @@ export function Visualizar(){
 //Modal de Editar
 export function Editar(){
     return(
-        <div className="w-2/6 p-5 h-fit flex flex-col bg-rosaB rounded-md">
+        <div className="w-2/6 p-5 h-fit flex flex-col bg-rosaB rounded-md z-1000 fixed bg-opacity-50">
             <h1 className="text-rosaMarrom pb-3 font-bold text-xl">Editar Produto</h1>
             
             <div className="px-3 flex flex-col">
@@ -74,9 +91,9 @@ export function Editar(){
 };
 
 //Modal de Deletar
-export function Deletar(){
+export function Deletar({  }){
     return(
-        <div className="w-2/6 p-5 h-fit flex flex-col bg-rosaB rounded-md">
+        <div className="w-2/6 p-5 h-fit flex flex-col bg-rosaB rounded-md z-1000 fixed bg-opacity-50">
             <h1 className="text-rosaMarrom pb-3 font-bold text-xl">Deletar</h1>
             
             <div className="flex flex-col justify-center items-center px-3">
@@ -86,7 +103,7 @@ export function Deletar(){
             
             <div className="pt-9 flex gap-5 justify-end items-end">
                 <Botao estilo="bg-rosaMarrom text-white px-3 py-1 rounded-full" titulo="Deletar"/>
-                <Botao estilo="bg-rosaMarrom text-white px-3 py-1 rounded-full" titulo="Cancelar"/>
+                <BotaoM estilo="bg-rosaMarrom text-white px-3 py-1 rounded-full" titulo="Cancelar "/>
             </div>
         </div>
     )

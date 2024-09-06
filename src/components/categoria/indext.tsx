@@ -17,7 +17,6 @@ export default function Categoria(){
                 modules={[Autoplay, Navigation]}
                 spaceBetween={30}
                 slidesPerView={1}
-                navigation
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
                 breakpoints={
@@ -27,18 +26,18 @@ export default function Categoria(){
                             spaceBetween: 0
                         },
                         768: {
-                            slidesPerView: 3,
+                            slidesPerView: 4,
                         },
                         1200: {
-                            slidesPerView: 4,
+                            slidesPerView: 5,
                         },
                     }
                 }
-                // autoplay={{ delay:2500, disableOnInteraction: false}}
+                autoplay={{ delay:2500, disableOnInteraction: false}}
                 loop={true}
                 className="w-full lg:w-4/5"
             >
-                <div className="flex justify-center items-center md:w-full">
+                <div className="flex justify-center items-center w-full md:w-full">
                     <SwiperSlide>
                     <div className="flex flex-row w-full justify-center items-center pt-10">
                         <CardCategoria imagem="assets/Imgaem.svg" titulo="Pulseiras"/>

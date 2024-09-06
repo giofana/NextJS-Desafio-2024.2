@@ -25,7 +25,7 @@ export default function Navbar(){
                 <Link href='/login'>
                     <UserRound/>
                 </Link>
-                <Link href='#'>
+                <Link href='/gerenciamento'>
                     <Settings/>
                 </Link>
                 

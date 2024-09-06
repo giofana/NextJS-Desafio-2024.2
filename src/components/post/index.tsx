@@ -3,7 +3,7 @@ import Image from "next/image";
 type PostProps={
     imagem: string,
     titulo: string,
-    descricao: string,
+    descricao?: string,
     valor: string,
 };
 export default function Post({imagem, titulo, descricao, valor}:PostProps){
