@@ -13,21 +13,21 @@ export default function Navbar(){
                 </Link>
             </div>
             <div className="gap-2 hidden md:flex">
-                <Link href='/'>
+                {/* <Link href='/'>
                     <House/>
+                </Link> */}
+                <Link href='/posts' className="text-lg px-3 py-1 text-acinzentado hover:bg-rosinha/15 transition hover:rounded-full">
+                    Produtos
                 </Link>
-                <Link href='/posts'>
-                    <Tag/>
+                <Link href='/contato' className="text-lg px-3 py-1 text-acinzentado hover:bg-rosinha/15 transition hover:rounded-full">
+                    Contato
                 </Link>
-                <Link href='/contato'>
-                    <Phone/>
+                <Link href='/login' className="text-lg px-3 py-1 text-acinzentado hover:bg-rosinha/15 transition hover:rounded-full">
+                    Login
                 </Link>
-                <Link href='/login'>
-                    <UserRound/>
-                </Link>
-                <Link href='/gerenciamento'>
+                {/* <Link href='/gerenciamento'>
                     <Settings/>
-                </Link>
+                </Link> */}
                 
             </div>
 

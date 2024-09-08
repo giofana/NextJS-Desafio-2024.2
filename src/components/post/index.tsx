@@ -1,19 +1,17 @@
+'use Client'
+import { Product } from "@prisma/client";
 import Image from "next/image";
+import { useState } from "react";
 
-type PostProps={
-    imagem: string,
-    titulo: string,
-    descricao?: string,
-    valor: string,
-};
-export default function Post({imagem, titulo, descricao, valor}:PostProps){
+
+export default function Post({products}: {products: Product}){
     return(
-        <div className="flex flex-col gap-2 ">
-            <Image alt="Imagem" src={imagem} width={500} height={500} className="w-full"/> 
+        <div className="flex flex-col gap-2 shadow-lg justify-center bg-slate-100/20 p-4 hover:scale-105 transition ease-in-out">
+            <Image alt="Imagem" src={"assets/Imgaem.svg"} width={500} height={500} className="w-full"/> 
             <div className="">
-                <h1>{titulo}</h1>
-                <h2 className="text-xs text-acinzentado">{descricao}</h2>
-                <span className="text-xs">{valor}</span>
+                <h1>{products?.title}</h1>
+                <h2 className="text-xs text-acinzentado">{products?.description}</h2>
+                <span className="text-xs">R$ {products?.price}</span>
             </div>
         </div>
     );

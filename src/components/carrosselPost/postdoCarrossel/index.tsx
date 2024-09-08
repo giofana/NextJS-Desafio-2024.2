@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-type PostCarrosselProps={
+type PostdoCarrosselProps={
     imagem: string,
     titulo: string,
     valor: string,
 };
-export default function PostCarrossel({imagem, titulo, valor}:PostCarrosselProps){
+export default function PostdoCarrossel({imagem, titulo, valor}:PostdoCarrosselProps){
     return(
             <div className="flex flex-col gap-4 bg-fundo p-4 rounded-md items-center">
                 <Image alt="Imagem" src={imagem} width={500} height={500} className=""/> 

@@ -1,16 +1,15 @@
 'use server';
-import { CreateButton } from "@/components/botao";
 import Pagination from "@/components/paginacao";
-import Search from "@/components/search";
-import { fetchProducts } from "../../../../actions/home/actions";
 import Tabela from "@/components/tabela";
+import Search from "@/components/search";
+import { CreateButton } from "../botao";
+import { Product } from "@prisma/client";
 
-export default async function Gerenciamento() {
-
-    const {products, totalPages} = await fetchProducts(1);
-
+export default async function PageSearch({products, totalPages, count}: {products: Product[] , totalPages:number, count:number}) {
     return (
         <div className="flex flex-col pb-16 px-16">
+            {count != 0?(
+        <div>
           <div className="flex flex-row justify-between">
             <Search estilo="text-txttab bg-rosaMarrom w-full" />
             <CreateButton id={1} />
@@ -35,6 +34,8 @@ export default async function Gerenciamento() {
         <div>
             <Pagination totalPages={totalPages}/>
         </div>
+        </div>
+        ):(<div>Nenhuma opção encontrada.</div>)}
         </div>
     );
 };

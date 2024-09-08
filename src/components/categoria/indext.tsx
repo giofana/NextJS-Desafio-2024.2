@@ -1,5 +1,4 @@
 'use client'
-import { CircleArrowLeft, CircleArrowRight } from "lucide-react";
 import CardCategoria from "./cardCategoria";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -33,7 +32,7 @@ export default function Categoria(){
                         },
                     }
                 }
-                autoplay={{ delay:2500, disableOnInteraction: false}}
+                autoplay={{ delay:2000, disableOnInteraction: false}}
                 loop={true}
                 className="w-full lg:w-4/5"
             >
