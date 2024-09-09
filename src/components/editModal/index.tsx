@@ -45,6 +45,7 @@ export default function EditModal({ isOpen, closeModal, product }: ModalProps) {
               name="title"
               type="text"
               value={title}
+              autoComplete="off"
               onChange={(e) => setTitle(e.target.value)}
               className="bg-rosaMarrom py-1 rounded-full w-auto text-acinzetado px-1 caret-marrom focus:outline-none text-white"
               required
@@ -55,6 +56,7 @@ export default function EditModal({ isOpen, closeModal, product }: ModalProps) {
               name="description"
               type="text"
               value={description}
+              autoComplete="off"
               onChange={(e) => setDescription(e.target.value)}
               className="bg-rosaMarrom py-1 rounded-full w-auto text-acinzetado px-1 caret-marrom focus:outline-none text-white"
               required
@@ -65,6 +67,7 @@ export default function EditModal({ isOpen, closeModal, product }: ModalProps) {
               name="price"
               type="text"
               value={price}
+              autoComplete="off"
               onChange={(e) => setPrice(e.target.value)}
               className="bg-rosaMarrom py-1 rounded-full w-auto text-acinzetado px-1 caret-marrom focus:outline-none text-white"
               required
