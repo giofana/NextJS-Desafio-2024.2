@@ -33,7 +33,7 @@ export default function PostsPage() {
     }, [currentPage]); // Reexecuta o efeito sempre que currentPage mudar
 
     if (loading) {
-        return <div>Carregando...</div>; // Adicione um indicador de carregamento
+        return <div className='w´full flex min-h-screen justify-center items-center'>Carregando...</div>;
     }
 
     return (

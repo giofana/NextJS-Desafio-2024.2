@@ -71,6 +71,7 @@ export async function createProduct(data:FormData) {
             price,
         },
     });
+
     redirect("/gerenciamento");
 };
 

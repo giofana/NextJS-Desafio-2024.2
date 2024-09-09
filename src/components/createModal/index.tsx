@@ -9,9 +9,13 @@ export default function CreateModal({isOpen, closeModal}: ModalProps){
     if (!isOpen) {
         return null;
     }
+    const handleSubmit = async () => {
+        window.location.reload();
+        closeModal(); // Fecha o modal
+    };
     return(
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-        <form action={createProduct} method="post" className={`w-2/6 p-5 h-fit flex flex-col bg-rosaB rounded-md fixed`}>
+        <form onSubmit={handleSubmit} action={createProduct} method="post" className={`w-2/6 p-5 h-fit flex flex-col bg-rosaB rounded-md fixed`}>
             
             <h1 className="text-rosaMarrom pb-3 font-bold text-xl">Criar Produto</h1>
             <div className="px-3 flex flex-col">
@@ -26,7 +30,7 @@ export default function CreateModal({isOpen, closeModal}: ModalProps){
             </div>
             
             <div className="pt-9 flex gap-5 justify-end items-end">
-            <button type="submit" className="bg-rosaMarrom text-white px-3 py-1 rounded-full">Criar</button>
+            <button type="submit" className="bg-rosaMarrom text-white px-3 py-1 rounded-full" >Criar</button>
             <button type="button" onClick={closeModal} className="bg-rosaMarrom text-white px-3 py-1 rounded-full">Cancelar</button>
             </div>
         </form>

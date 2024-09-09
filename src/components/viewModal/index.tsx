@@ -26,7 +26,7 @@ export default function ViewModal({isOpen, closeModal, product}: ModalProps){
                 <input name="description" defaultValue={product.description} type="text" className="bg-rosaMarrom py-1 rounded-full w-auto text-acinzetado px-1 caret-marrom focus:outline-none text-white"/>
 
                 <span className="text-white py-2">Valor:</span>
-                <input name="price" type="text" defaultValue={product.price} className="bg-rosaMarrom py-1 rounded-full w-auto text-acinzetado px-1 caret-marrom focus:outline-none text-white"/>
+                <input name="price" type="text" defaultValue={`R$ ${product.price}`} className="bg-rosaMarrom py-1 rounded-full w-auto text-acinzetado px-1 caret-marrom focus:outline-none text-white"/>
             </div>
             
             <div className="pt-9 flex gap-5 justify-end items-end">

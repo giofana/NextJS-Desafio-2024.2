@@ -1,8 +1,6 @@
-// DeleteModal.tsx
 'use client';
-
 import { deleteProduct } from "../../../actions/home/actions";
-import { useRouter } from 'next/navigation'; // Importa o hook de navegação
+import { useRouter } from 'next/navigation'; 
 
 type ModalProps = {
     isOpen: boolean;
@@ -11,13 +9,15 @@ type ModalProps = {
 };
 
 export default function DeleteModal({ isOpen, closeModal, deleteId }: ModalProps) {
-    const router = useRouter(); // Obtém o router para navegação
+    const router = useRouter();
 
     const handleDelete = async () => {
+        
         if (deleteId) {
-            await deleteProduct(deleteId); // Chama a função de deletar
-            closeModal(); // Fecha o modal
-            router.push('/gerenciamento'); // Redireciona para a página de gerenciamento
+            await deleteProduct(deleteId);
+            window.location.reload();
+            closeModal(); 
+            router.push('/gerenciamento');
         }
     };
 

@@ -121,7 +121,9 @@ export function DeleteButton({ id }: { id: number | undefined }) {
     return (
         <div className="flex justify-center items-center">
             <button className="bg-rosaMarrom text-rosinha px-4 py-2 rounded-full" onClick={openDeleteModal}>Deletar</button>
-            {openModal && <DeleteModal isOpen={openModal} closeModal={closeModal} productId={id} />}
+            {/* Use "deleteId" em vez de "productId" */}
+            {openModal && <DeleteModal isOpen={openModal} closeModal={closeModal} deleteId={id} />}
         </div>
     );
 }
+

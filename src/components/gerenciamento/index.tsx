@@ -1,5 +1,3 @@
-
-import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import { CreateButton } from "@/components/botao";
 import Pagination from "@/components/paginacao";
 import Search from "@/components/search";
