@@ -7,14 +7,14 @@ export default async function Search({
 }:{
     searchParams:{
         query?: string;
-        currentPage?: string;
+        page?: string;
     }
 }) {
 
     const query=searchParams?.query || ''
-    const currentPageA= Number(searchParams?.currentPage) || 1
+    const currentPageA= Number(searchParams?.page) || 1
     const {products, totalPages, contador} = await fetchFilteredProducts(query, currentPageA);
-    
+
 
     return (
         <PageSearch products={products} totalPages={totalPages} count={contador}/>

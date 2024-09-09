@@ -6,13 +6,14 @@ import { CreateButton } from "../botao";
 import { Product } from "@prisma/client";
 
 export default async function PageSearch({products, totalPages, count}: {products: Product[] , totalPages:number, count:number}) {
+  
     return (
         <div className="flex flex-col pb-16 px-16">
             {count != 0?(
         <div>
           <div className="flex flex-row justify-between">
             <Search estilo="text-txttab bg-rosaMarrom w-full" />
-            <CreateButton id={1} />
+            <CreateButton />
           </div>
           <div className="shadow-md sm:rounded-lg overflow-x-auto px-7 relative">
             <table className="w-full border-separate border-spacing-y-1 border-rosaC text-left">
@@ -32,7 +33,7 @@ export default async function PageSearch({products, totalPages, count}: {product
             </table>
           </div>
         <div>
-            <Pagination totalPages={totalPages}/>
+            <Pagination  totalPages={totalPages} currentPage={count}/>
         </div>
         </div>
         ):(<div>Nenhuma opção encontrada.</div>)}

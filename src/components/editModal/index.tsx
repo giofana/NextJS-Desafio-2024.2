@@ -18,19 +18,16 @@ export default function EditModal({ isOpen, closeModal, product }: ModalProps) {
     }
   
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault(); // Impede o comportamento padrão de envio do formulário
+      e.preventDefault();
   
       const formData = new FormData();
       formData.append('title', title);
       formData.append('description', description);
       formData.append('price', price);
   
-      // Supondo que você tenha o ID disponível, você pode obter o ID do estado ou de outra fonte
-      const id = 1; // Substitua com o ID real
+      await editProduct(product.id, formData);
   
-      await editProduct(id, formData); // Chama a função editProduct passando o ID e o FormData
-  
-      closeModal(); // Fecha o modal após o envio
+      closeModal(); 
     };
   
     return (
@@ -41,8 +38,8 @@ export default function EditModal({ isOpen, closeModal, product }: ModalProps) {
             <div className="px-3 flex flex-col">
               <span className="text-white py-2">Nome:</span>
               <input
+                name="title"
                 type="text"
-                value={title}
                 defaultValue={product?.title}
                 onChange={(e) => setTitle(e.target.value)}
                 className="bg-rosaMarrom py-1 rounded-full w-auto text-acinzetado px-1 caret-marrom focus:outline-none text-white"
@@ -51,8 +48,8 @@ export default function EditModal({ isOpen, closeModal, product }: ModalProps) {
   
               <span className="text-white py-2">Descrição:</span>
               <input
+                name="description"
                 type="text"
-                value={description}
                 defaultValue={product?.description}
                 onChange={(e) => setDescription(e.target.value)}
                 className="bg-rosaMarrom py-1 rounded-full w-auto text-acinzetado px-1 caret-marrom focus:outline-none text-white"
@@ -61,8 +58,8 @@ export default function EditModal({ isOpen, closeModal, product }: ModalProps) {
   
               <span className="text-white py-2">Valor:</span>
               <input
+                name="price"
                 type="text"
-                value={price}
                 defaultValue={product?.price}
                 onChange={(e) => setPrice(e.target.value)}
                 className="bg-rosaMarrom py-1 rounded-full w-auto text-acinzetado px-1 caret-marrom focus:outline-none text-white"

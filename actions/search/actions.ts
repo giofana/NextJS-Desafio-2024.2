@@ -13,6 +13,13 @@ export async function fetchFilteredProducts(pesquisa: string, currentPage:number
         orderBy:{
             id:"asc"
         },
+        select: {
+            createdAt: true,
+            title: true,
+            description: true,
+            price: true,
+            id: true,
+        },
         take: itemsPerPage,
         skip: offset,
     })

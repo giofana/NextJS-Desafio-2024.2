@@ -40,7 +40,7 @@ export default function Home() {
 
       <div className="flex bg-rosaNav p-8 justify-center items-center flex-col gap-2 lg:flex-row lg:px-20 lg:items-stretch">
         {(cards.map((card) => (
-           <CardApi id={card.id} title={card.title} text={card.text} />
+           <CardApi key={card.id} id={card.id} title={card.title} text={card.text} />
         )))}
       </div>
 
