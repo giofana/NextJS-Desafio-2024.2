@@ -9,11 +9,11 @@ export default function ContactPage(){
             <div className="flex flex-col gap-3">
                 <span className="font-bold pt-2 md:text-2xl">Nossas Redes Sociais</span>
                 <div className="flex gap-3 flex-col">
-                <Link className="inline-flex gap-2 " href="#" target="_blank">
+                <Link className="inline-flex gap-2 " href="https://www.facebook.com/codeempresajunior/?locale=pt_BR" target="_blank">
                     <Facebook />
                     <span >facebook.com/Essence</span>
                 </Link>
-                <Link className="inline-flex gap-2" href="#" target="_blank">
+                <Link className="inline-flex gap-2" href="https://www.instagram.com/codejr/" target="_blank">
                     <Instagram />
                     <span >@Essence</span>
                 </Link>
@@ -27,11 +27,11 @@ export default function ContactPage(){
             <div className="flex flex-col gap-3">
                 <span className="font-bold pt-2 md:text-2xl">Entre Contato</span>
                 <div className="flex gap-3 flex-col">
-                    <Link className="inline-flex gap-2" href="#" target="_blank">
+                    <Link className="inline-flex gap-2" href="tel:+5540028922" target="_blank">
                         <MessageCircle />
                         <span >(21) 4002-8922</span>
                     </Link>
-                    <Link className="inline-flex gap-2" href="#" target="_blank">
+                    <Link className="inline-flex gap-2" href="mailto:giovana.maieli@codejr.com.br" target="_blank">
                         <Mail />
                         <span >contato@essence.com.br</span>
                     </Link>

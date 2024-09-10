@@ -1,50 +1,43 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
-import Pagination from "@/components/paginacao";
-import Post from "@/components/post";
-import Search from "@/components/search";
+import { useEffect, useState } from "react";
 import { fetchProducts } from "../../../../actions/home/actions";
+import PostsPage from "@/components/postsPage";
 
-export default function PostsPage() {
-    const searchParams = useSearchParams();
-    const currentPage = parseInt(searchParams.get('page') || '1', 10); // Captura o valor de 'page' da URL, ou usa 1 como padrão
+type ProdutoProp = {
+  searchParams: {
+    page?: string;
+  };
+};
 
-    const [products, setProducts] = useState([]);
-    const [totalPages, setTotalPages] = useState(0);
-    const [loading, setLoading] = useState(true);
+export default function Posts({ searchParams }: ProdutoProp) {
+  const currentPage = Number(searchParams?.page) || 1;
 
-    useEffect(() => {
-        const fetchData = async () => {
-            setLoading(true);
-            try {
-                const { products, totalPages } = await fetchProducts(currentPage);
-                setProducts(products);
-                setTotalPages(totalPages);
-            } catch (error) {
-                console.error('Erro ao buscar produtos:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
+  const [products, setProducts] = useState<
+    {
+      id: number;
+      title: string;
+      description: string | null;
+      price: number;
+      createdAt: Date;
+    }[]
+  >([]);
+  const [totalPages, setTotalPages] = useState<number>(0);
 
-        fetchData();
-    }, [currentPage]); // Reexecuta o efeito sempre que currentPage mudar
+  useEffect(() => {
+    const fetchData = async () => {
+      const { products, totalPages } = await fetchProducts(currentPage);
+      setProducts(products);
+      setTotalPages(totalPages);
+    };
+    
+    fetchData();
+  }, [currentPage]);
 
-    if (loading) {
-        return <div className='w´full flex min-h-screen justify-center items-center'>Carregando...</div>;
-    }
-
-    return (
-        <div className="min-h-screen">
-            <Search estilo="bg-rosaNav " />
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-10 px-20 md:px-28 py-10 justify-center">
-                {products.map((product, index) => (
-                    <Post products={product} key={index} />
-                ))}
-            </div>
-            <Pagination totalPages={totalPages} currentPage={currentPage} />
-        </div>
-    );
+  return (
+    <div className="w-full flex justify-center bg-fundo min-h-screen">
+      <PostsPage products={products} totalPages={totalPages} currentPage={currentPage} />
+    </div>
+  );
 }
+

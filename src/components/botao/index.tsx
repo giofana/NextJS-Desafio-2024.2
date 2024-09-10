@@ -5,6 +5,8 @@ import EditModal from "../editModal";
 import ViewModal from "../viewModal";
 import DeleteModal from "../deleteModal";
 import { ProductByID } from "../../../actions/home/actions";
+import { Menu } from "lucide-react";
+import Sidebar from "../sidebar";
 
 type BotaoProps = {
     titulo?: string;
@@ -16,6 +18,24 @@ export default function Botao({ titulo, estilo }: BotaoProps) {
     return (
         <div className="flex justify-center items-center">
             <button className={estilo}>{titulo}</button>
+        </div>
+    );
+}
+export function SidebarButton() {
+    const [openSidebar, setOpenSidebar] = useState(false);
+
+    const openNewSidebar = () => {
+        setOpenSidebar(true);
+    };
+
+    const closeSidebar = () => {
+        setOpenSidebar(false);
+    };
+
+    return (
+        <div className="flex justify-center items-center">
+            <button type="button" className="text-acinzentado " onClick={openNewSidebar}> <Menu/> </button>
+            {openSidebar && <Sidebar isOpen={openSidebar} closeModal={closeSidebar} />}
         </div>
     );
 }

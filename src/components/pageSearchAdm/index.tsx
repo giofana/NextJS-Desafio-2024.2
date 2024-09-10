@@ -1,9 +1,11 @@
 'use server';
 import Pagination from "@/components/paginacao";
 import Tabela from "@/components/tabela";
-import Search from "@/components/search";
 import { CreateButton } from "../botao";
 import { Product } from "@prisma/client";
+import SearchAdm from "@/components/searchAdm";
+import Image from "next/image";
+import Link from "next/link";
 
 export default async function PageSearch({products, totalPages, count}: {products: Product[] , totalPages:number, count:number}) {
   
@@ -12,7 +14,7 @@ export default async function PageSearch({products, totalPages, count}: {product
             {count != 0?(
         <div>
           <div className="flex flex-row justify-between">
-            <Search estilo="text-txttab bg-rosaMarrom w-full" />
+            <SearchAdm estilo="text-txttab bg-rosaMarrom w-full" />
             <CreateButton />
           </div>
           <div className="shadow-md sm:rounded-lg overflow-x-auto px-7 relative">
@@ -35,8 +37,24 @@ export default async function PageSearch({products, totalPages, count}: {product
         <div>
             <Pagination  totalPages={totalPages} currentPage={count}/>
         </div>
-        </div>
-        ):(<div>Nenhuma opção encontrada.</div>)}
+        </div> 
+        ):(<div className="w-full min-h-screen flex justify-center items-center">
+              <div className="flex flex-col justify-center items-center">
+                  <Image 
+                    alt="Imagem ilustrativa de um diamante" 
+                    src={"/assets/diamante.png"} 
+                    width={904} height={904}
+                    className="w-1/3"/>
+
+                  <h1>Nenhuma opção encontrada.</h1>
+                  
+                  <Link className="bg-rosaNav rounded-full w-fit px-3 py-1 flex justify-center mt-3" href={"/gerenciamento"}>
+                    Voltar para a página anterior
+                  </Link>
+              </div>
+
+           </div>
+        )}
         </div>
     );
 };

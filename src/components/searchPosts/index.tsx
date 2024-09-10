@@ -8,7 +8,7 @@ type SearchProps = {
     estilo: string;
 };
 
-export default function Search({ estilo }: SearchProps) {
+export default function SearchPosts({ estilo }: SearchProps) {
 
     const search = useSearchParams();
     const router = useRouter();
@@ -19,7 +19,7 @@ export default function Search({ estilo }: SearchProps) {
         }
         const params = new URLSearchParams();
         params.set('query', query)
-        router.replace(`/search/?${params.toString()}`)
+        router.replace(`/searchPostsPage/?${params.toString()}`)
     };
 
     const enviaPesquisa = (e: React.FormEvent<HTMLFormElement>)=> {
@@ -30,7 +30,7 @@ export default function Search({ estilo }: SearchProps) {
         <div className="w-auto">
             <form onSubmit={enviaPesquisa} className="" autoComplete="off">
                 <div className="flex w-auto justify-center flex-col items-center gap-6 my-10">
-                    <div className={`flex rounded-full py-3 w-3/4 px-8 justify-between items-center ${estilo}`}>
+                    <div className={`flex rounded-full py-3 w-3/4 md:w-1/2 lg:w-2/5 px-8 justify-between items-center ${estilo}`}>
                         <input 
                             id="search"
                             name="search"
@@ -39,7 +39,7 @@ export default function Search({ estilo }: SearchProps) {
                             className="w-auto text-rosinha bg-transparent caret-rosinha focus:outline-none placeholder:text-white"
                             placeholder="O que você procura?"
                         /> 
-                        <SearchIcon className="w-7 h-7 text-rosinha left-4" />
+                        <SearchIcon className=" text-rosinha left-4" />
                     </div>
                 </div>
             </form>

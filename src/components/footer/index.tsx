@@ -9,10 +9,10 @@ export default function Footer() {
       <div className="order-3 md:order-1">
         <span className="font-bold pt-2 md:text-xl">Redes Sociais:</span>
         <span className="flex gap-2">
-          <Link href="#" target="_blank">
+          <Link href="https://www.facebook.com/codeempresajunior/?locale=pt_BR" target="_blank">
             <Facebook />
           </Link>
-          <Link href="#" target="_blank">
+          <Link href="https://www.instagram.com/codejr/" target="_blank">
             <Instagram />
           </Link>
           <Link href="https://www.youtube.com/watch?v=9iIRRSggpBU&t=119s" target="_blank">
@@ -31,11 +31,11 @@ export default function Footer() {
       {/* Contato */}
         <div className="order-2 md:order-3">
             <span className="font-bold pt-2 md:text-xl">Contato:</span>
-            <Link href="#" className="flex items-center gap-2" target="_blank">
+            <Link href="tel:+5540028922" className="flex items-center gap-2" target="_blank">
                 <MessageCircle />
                 <span className="inline-flex">(21) 4002-8922</span>
             </Link>
-            <Link href="#" className="flex items-center gap-2" target="_blank">
+            <Link href="mailto:giovana.maieli@codejr.com.br" className="flex items-center gap-2" target="_blank">
                 <Mail />
                 <span className="inline-flex">contato@essence.com.br</span>
             </Link>

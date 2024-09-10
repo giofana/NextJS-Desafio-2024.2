@@ -1,6 +1,6 @@
 import { CreateButton } from "@/components/botao";
 import Pagination from "@/components/paginacao";
-import Search from "@/components/search";
+import SearchAdm from "@/components/searchAdm";
 import Tabela from "@/components/tabela";
 
 interface GerenciamentoPageProps {
@@ -13,7 +13,7 @@ export default function GerenciamentoPage({ products, totalPages, currentPage }:
     return (
         <div className="flex flex-col pb-16 px-16 bg-fundo">
             <div className="flex flex-row justify-between">
-                <Search estilo="text-txttab bg-rosaMarrom w-full" />
+                <SearchAdm estilo="text-txttab bg-rosaMarrom w-full" />
                 <CreateButton />
             </div>
             <div className="shadow-md sm:rounded-lg overflow-x-auto px-7 relative">

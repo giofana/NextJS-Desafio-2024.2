@@ -1,8 +1,8 @@
 'use server';
 import { fetchFilteredProducts } from "../../../../actions/search/actions";
-import PageSearch from "@/components/pageSearch";
+import PageSearch from "@/components/pageSearchAdm";
 
-export default async function Search({
+export default async function SearchAdmPage({
     searchParams,
 }:{
     searchParams:{
